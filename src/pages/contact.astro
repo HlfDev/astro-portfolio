@@ -24,12 +24,14 @@ const header = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Section classes="bg-white">
+	<Section classes="bg-gradient-to-b from-white to-blue-50 py-16">
 		<Row>
 			<Col span="2" />
-			<Col span="8">
-				<h1>Get in <strong>Touch</strong></h1>
-				<p class="mb-12 text-lg">
+			<Col span="8" align="center">
+				<h1 class="mb-4 text-4xl md:text-5xl">
+					Get in <strong class="text-blue-600">Touch</strong>
+				</h1>
+				<p class="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-700">
 					I'm always open to discussing new projects, creative ideas, or opportunities to
 					be part of your vision.
 				</p>
@@ -37,59 +39,81 @@ const header = {
 			<Col span="2" />
 		</Row>
 
-		<Row>
-			<Col span="2" />
-			<Col span="8">
-				<div class="rounded-lg bg-white p-8 shadow-sm">
-					<div class="space-y-8">
-						<div class="flex items-center gap-4">
+		<Row classes="mt-4">
+			<Col span="3" />
+			<Col span="6">
+				<div
+					class="rounded-xl border border-gray-100 bg-white p-10 shadow-lg transition-all duration-300 hover:shadow-xl"
+				>
+					<h2 class="mb-8 text-center text-2xl font-bold text-gray-800">
+						Contact Information
+					</h2>
+					<div class="mx-auto max-w-lg space-y-10">
+						<a
+							href="tel:+5519982226579"
+							class="group flex items-center gap-6 transition-all duration-300 hover:translate-x-2"
+						>
 							<div
-								class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+								class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600 shadow-sm transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white"
+								aria-hidden="true"
 							>
-								<Icon name="phone-arrow-up-right" class="h-6 w-6" />
+								<Icon name="phone-arrow-up-right" class="h-8 w-8" />
 							</div>
 							<div>
-								<h3 class="text-lg font-semibold">Phone</h3>
-								<p>+55 (19) 98222-6579</p>
+								<h3
+									class="text-xl font-semibold text-gray-800 transition-all duration-300 group-hover:text-blue-600"
+								>
+									Phone
+								</h3>
+								<p class="mt-1 text-gray-600">+55 (19) 98222-6579</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="flex items-center gap-4">
+						<a
+							href="mailto:pedrohlf.contato@gmail.com"
+							class="group flex items-center gap-6 transition-all duration-300 hover:translate-x-2"
+						>
 							<div
-								class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+								class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600 shadow-sm transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white"
+								aria-hidden="true"
 							>
-								<Icon name="mail-icon" class="h-6 w-6" />
+								<Icon name="mail-icon" class="h-8 w-8" />
 							</div>
 							<div>
-								<h3 class="text-lg font-semibold">Email</h3>
-								<p>pedrohlf.contato@gmail.com</p>
+								<h3
+									class="text-xl font-semibold text-gray-800 transition-all duration-300 group-hover:text-blue-600"
+								>
+									Email
+								</h3>
+								<p class="mt-1 text-gray-600">pedrohlf.contato@gmail.com</p>
 							</div>
-						</div>
+						</a>
 
-						<div class="flex items-center gap-4">
+						<a
+							href="https://linkedin.com/in/hlfdev"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex items-center gap-6 transition-all duration-300 hover:translate-x-2"
+						>
 							<div
-								class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+								class="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600 shadow-sm transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white"
+								aria-hidden="true"
 							>
-								<Icon name="linkedin-icon" class="h-6 w-6" />
+								<Icon name="linkedin-icon" class="h-8 w-8" />
 							</div>
 							<div>
-								<h3 class="text-lg font-semibold">LinkedIn</h3>
-								<p>
-									<a
-										href="https://linkedin.com/in/hlfdev"
-										target="_blank"
-										rel="noopener noreferrer"
-										class="text-blue-600 hover:underline"
-									>
-										linkedin.com/in/hlfdev
-									</a>
-								</p>
+								<h3
+									class="text-xl font-semibold text-gray-800 transition-all duration-300 group-hover:text-blue-600"
+								>
+									LinkedIn
+								</h3>
+								<p class="mt-1 text-gray-600">linkedin.com/in/hlfdev</p>
 							</div>
-						</div>
+						</a>
 					</div>
 				</div>
 			</Col>
-			<Col span="2" />
+			<Col span="3" />
 		</Row>
 	</Section>
 </Layout>
