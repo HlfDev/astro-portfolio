@@ -1,0 +1,73 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'About | Pedro Francisco - Software Engineer',
+	description:
+		'Learn more about Pedro Francisco, a Software Engineer specializing in Flutter development with expertise in mobile application development.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section classes="bg-white">
+		<Row>
+			<Col span="2" />
+			<Col span="8">
+				<h1>About <strong>Me</strong></h1>
+				<p class="text-lg">
+					Technology enthusiast passionate about creating innovative and efficient
+					solutions.
+				</p>
+				<p>
+					I develop cross-platform applications with Flutter, leveraging Design Patterns,
+					TDD, SOLID principles, and Clean Architecture to ensure high-quality code. I am
+					also expanding my knowledge to native platforms, including Android (Kotlin) and
+					iOS (Swift).
+				</p>
+
+				<h2 class="mt-8">Education</h2>
+				<div class="mb-6">
+					<h3 class="text-xl font-semibold">
+						Lato Sensu Postgraduate - Specialization in Full Stack Development
+					</h3>
+					<p>Pontifícia Universidade Católica de Minas Gerais (2021 - 2025, Ongoing)</p>
+				</div>
+				<div class="mb-6">
+					<h3 class="text-xl font-semibold">Bachelor's Degree in Information Systems</h3>
+					<p>Universidade Paulista (2017 - 2020)</p>
+				</div>
+
+				<h2 class="mt-8">Languages</h2>
+				<ul class="list-disc pl-6">
+					<li>Portuguese (Native/Fluent)</li>
+					<li>English (Intermediate)</li>
+				</ul>
+
+				<h2 class="mt-8">Additional Information</h2>
+				<ul class="list-disc pl-6">
+					<li>
+						Passionate about continuous learning and innovation in mobile development.
+					</li>
+					<li>
+						Strong problem-solving skills and ability to work in fast-paced
+						environments.
+					</li>
+					<li>Committed to writing clean, maintainable, and scalable code.</li>
+					<li>
+						Open to collaboration and teamwork to achieve outstanding software
+						solutions.
+					</li>
+				</ul>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
+</Layout>

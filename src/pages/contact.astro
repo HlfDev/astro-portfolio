@@ -1,0 +1,95 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
+import { Icon } from 'astro-icon/components'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Contact | Pedro Francisco - Software Engineer',
+	description:
+		'Get in touch with Pedro Francisco, a Software Engineer specializing in Flutter development for mobile applications.'
+}
+// - Page Header
+const header = {
+	title: 'Get Answers to Your <strong>Foxi</strong> Questions.',
+	text: "Whether you have a question, need support, or just want to share your feedback, we're all ears. Reach out to us and we'll get back to you as soon as possible."
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section classes="bg-white">
+		<Row>
+			<Col span="2" />
+			<Col span="8">
+				<h1>Get in <strong>Touch</strong></h1>
+				<p class="mb-12 text-lg">
+					I'm always open to discussing new projects, creative ideas, or opportunities to
+					be part of your vision.
+				</p>
+			</Col>
+			<Col span="2" />
+		</Row>
+
+		<Row>
+			<Col span="2" />
+			<Col span="8">
+				<div class="rounded-lg bg-white p-8 shadow-sm">
+					<div class="space-y-8">
+						<div class="flex items-center gap-4">
+							<div
+								class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+							>
+								<Icon name="phone-arrow-up-right" class="h-6 w-6" />
+							</div>
+							<div>
+								<h3 class="text-lg font-semibold">Phone</h3>
+								<p>+55 (19) 98222-6579</p>
+							</div>
+						</div>
+
+						<div class="flex items-center gap-4">
+							<div
+								class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+							>
+								<Icon name="mail-icon" class="h-6 w-6" />
+							</div>
+							<div>
+								<h3 class="text-lg font-semibold">Email</h3>
+								<p>pedrohlf.contato@gmail.com</p>
+							</div>
+						</div>
+
+						<div class="flex items-center gap-4">
+							<div
+								class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+							>
+								<Icon name="linkedin-icon" class="h-6 w-6" />
+							</div>
+							<div>
+								<h3 class="text-lg font-semibold">LinkedIn</h3>
+								<p>
+									<a
+										href="https://linkedin.com/in/hlfdev"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-blue-600 hover:underline"
+									>
+										linkedin.com/in/hlfdev
+									</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
+</Layout>

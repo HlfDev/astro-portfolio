@@ -1,0 +1,73 @@
+---
+// Skills Section
+// ------------
+// Description: A grid of cards with skills information in a 4 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+
+// Content
+// - Cards
+import feature01 from '../../../assets/cards/feature-01.svg'
+import feature02 from '../../../assets/cards/feature-02.svg'
+import feature03 from '../../../assets/cards/feature-03.svg'
+import feature04 from '../../../assets/cards/feature-04.svg'
+import feature05 from '../../../assets/cards/feature-05.svg'
+---
+
+<Section id="skills" classes="bg-white">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">My <strong>Skills</strong> & Expertise</h2>
+			<p class="pb-0 text-lg">
+				I develop cross-platform applications with Flutter, leveraging Design Patterns, TDD,
+				SOLID principles, and Clean Architecture to ensure high-quality code. I am also
+				expanding my knowledge to native platforms, including Android (Kotlin) and iOS
+				(Swift).
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="4">
+			<Card
+				title="Flutter Development"
+				subtitle="Expert in building cross-platform mobile applications using Flutter and Dart. Proficient in creating beautiful, responsive UIs and implementing complex business logic."
+				image={feature01}
+				link="/experience"
+			/>
+		</Col>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Clean Architecture & SOLID"
+				subtitle="Strong focus on software architecture principles to create maintainable, testable, and scalable applications."
+				image={feature02}
+				link="/experience"
+			/>
+			<Card
+				title="Test-Driven Development"
+				subtitle="Experienced in TDD practices to ensure code quality, reliability, and maintainability through comprehensive test coverage."
+				image={feature03}
+				link="/experience"
+			/>
+		</Col>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Firebase & Backend Integration"
+				subtitle="Skilled in integrating Firebase services and RESTful APIs to create full-featured mobile applications."
+				image={feature04}
+				link="/experience"
+			/>
+			<Card
+				title="CI/CD & DevOps"
+				subtitle="Experience with continuous integration and deployment pipelines to streamline development workflows and ensure quality releases."
+				image={feature05}
+				link="/experience"
+			/>
+		</Col>
+	</Row>
+</Section>

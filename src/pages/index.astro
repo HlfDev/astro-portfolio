@@ -1,0 +1,25 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Hero from '../components/blocks/hero/HomeCTA.astro'
+import Skills from '../components/blocks/features/FeatureCards.astro'
+import Experience from '../components/blocks/highlights/HightlightRows.astro'
+import Articles from '../components/blocks/articles/ArticleCards.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Pedro Francisco | Software Engineer & Flutter Developer',
+	description:
+		'Pedro Francisco is a Software Engineer specializing in Flutter development with expertise in Design Patterns, TDD, SOLID principles, and Clean Architecture.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero />
+	<Skills />
+	<Experience />
+	<Articles />
+</Layout>

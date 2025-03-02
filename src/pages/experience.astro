@@ -1,0 +1,38 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import ExperienceSection from '../components/blocks/highlights/HightlightRows.astro'
+import Skills from '../components/blocks/features/FeatureCards.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Experience | Pedro Francisco - Software Engineer',
+	description:
+		"Explore Pedro Francisco's professional experience and skills as a Software Engineer specializing in Flutter development."
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section classes="bg-white">
+		<Row>
+			<Col span="2" />
+			<Col span="8">
+				<h1>Professional <strong>Experience</strong></h1>
+				<p class="mb-12 text-lg">
+					My career journey in software development, with a focus on mobile application
+					development using Flutter.
+				</p>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
+
+	<ExperienceSection />
+	<Skills />
+</Layout>

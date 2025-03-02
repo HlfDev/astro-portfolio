@@ -1,0 +1,100 @@
+---
+// Experience Section
+// ------------
+// Description: A section with multiple text and image rows showcasing professional experience.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import TextImage from '../basic/TextImage.astro'
+
+// Content
+import highlight01 from '../../../assets/highlights/highlight-01.svg'
+import highlight01mobile from '../../../assets/highlights/highlight-01-mobile.svg'
+import highlight02 from '../../../assets/highlights/highlight-02.svg'
+import highlight02mobile from '../../../assets/highlights/highlight-02-mobile.svg'
+import highlight03 from '../../../assets/highlights/highlight-03.svg'
+import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.svg'
+import highlight04 from '../../../assets/highlights/highlight-04.svg'
+import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
+
+type HighlightBlock = {
+	title: string
+	text: string
+	image: any
+	mobileImage?: any
+	imageWidth: number
+	imageHeight: number
+	imagePosition: 'left' | 'right'
+}
+const highlightBlocks: HighlightBlock[] = [
+	{
+		title: 'Dafiti - <strong>Software Engineer - Senior</strong>',
+		text: 'Part of the Growth Team, developing cross-platform mobile applications using Flutter. Focus on scalability, performance, and user experience. Collaborate with teams to deliver innovative solutions for fashion e-commerce.',
+		image: highlight01,
+		imageWidth: highlight01.width,
+		imageHeight: highlight01.height,
+		mobileImage: highlight01mobile,
+		imagePosition: 'right'
+	},
+	{
+		title: 'Raro Labs - <strong>Flutter Mobile Developer - Mid-Level</strong>',
+		text: 'Worked with Bank BMG in the credit cards and loans team. Participated in migrating native Android/iOS applications to Flutter. Contributed to system optimization and scalability improvements.',
+		image: highlight02,
+		mobileImage: highlight02mobile,
+		imageWidth: highlight02.width,
+		imageHeight: highlight02.height,
+		imagePosition: 'left'
+	},
+	{
+		title: 'Dimensa Tecnologia - <strong>Flutter Mobile Developer - Junior</strong>',
+		text: 'Developed high-performing mobile applications for Android and iOS using Flutter. Created fintech and digital banking solutions. Integrated APIs and backend services. Configured CI/CD pipelines and deployed apps to Play Store and Apple Store.',
+		image: highlight03,
+		mobileImage: highlight03mobile,
+		imageWidth: highlight03.width,
+		imageHeight: highlight03.height,
+		imagePosition: 'right'
+	},
+	{
+		title: 'Inntegra Systems - <strong>ERP Developer - Junior</strong>',
+		text: 'Developed ERP module features using Visual Basic 6. Created advanced reports with Crystal Reports 8. Developed SQL scripts for Business Intelligence using MySQL. Maintained integration applications using C# (Windows Forms).',
+		image: highlight04,
+		mobileImage: highlight04mobile,
+		imageWidth: highlight04.width,
+		imageHeight: highlight04.height,
+		imagePosition: 'left'
+	}
+]
+---
+
+<Section id="experience" classes="bg-white">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Professional <strong>Experience</strong></h2>
+			<p class="pb-0 text-lg">
+				My career journey in software development, with a focus on mobile application
+				development using Flutter.
+			</p>
+		</Col>
+	</Row>
+	{
+		highlightBlocks.map((highlight, key) => (
+			<TextImage
+				id={`highlight-${key}`}
+				title={highlight.title}
+				text={highlight.text}
+				image={highlight.image}
+				imageWidth={highlight.imageWidth}
+				imageHeight={highlight.imageHeight}
+				mobileImage={highlight.mobileImage}
+				imagePosition={highlight.imagePosition}
+				classes={
+					key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'
+				}
+			/>
+		))
+	}
+</Section>

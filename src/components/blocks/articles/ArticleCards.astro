@@ -1,0 +1,72 @@
+---
+// Articles Section
+// ------------
+// Description: A grid of cards with Medium articles in a 3 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+
+// Content
+// - Cards
+import article01 from '../../../assets/cards/feature-01.svg'
+import article02 from '../../../assets/cards/feature-04.svg'
+import article03 from '../../../assets/cards/feature-05.svg'
+
+// Articles data
+const articles = [
+	{
+		title: 'KISS, DRY, SOLID, YAGNI: A Simple Guide to Software Engineering Principles',
+		subtitle:
+			'A simple guide to some principles of software engineering and clean code that will help you write better code.',
+		image: article01,
+		link: 'https://medium.com/@hlfdev/kiss-dry-solid-yagni-a-simple-guide-to-some-principles-of-software-engineering-and-clean-code-05e60233c79f'
+	},
+	{
+		title: 'Algorithms: Discover the Power of Big O Notation',
+		subtitle:
+			'Understanding Big O Notation and its importance in algorithm analysis and software development.',
+		image: article02,
+		link: 'https://medium.com/@hlfdev/algorithms-discover-the-power-of-big-o-notation-17a367bd62a'
+	},
+	{
+		title: 'Building a Design System with Atomic Design in Flutter',
+		subtitle:
+			'Learn how to implement Atomic Design principles to create a scalable and maintainable design system in Flutter applications.',
+		image: article03,
+		link: 'https://medium.com/@hlfdev/building-a-design-system-with-atomic-design-in-flutter-a7a16e28739b'
+	}
+]
+---
+
+<Section id="articles" classes="bg-white">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">My <strong>Articles</strong></h2>
+			<p class="pb-0 text-lg">
+				I enjoy sharing my knowledge and insights about software development through
+				writing. Check out some of my articles published on Medium.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			articles.map((article) => (
+				<Col span="4">
+					<Card
+						title={article.title}
+						subtitle={article.subtitle}
+						image={article.image}
+						link={article.link}
+						target="_blank"
+						rel="noopener noreferrer"
+					/>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

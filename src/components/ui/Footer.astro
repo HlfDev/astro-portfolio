@@ -1,0 +1,118 @@
+---
+// Footer
+// ------------
+// Description: the website footer is the section of content
+// Reference: https://wind-ui.com/components/footers/
+
+// Components
+// - UI
+import { Icon } from 'astro-icon/components'
+
+// Data
+import { socialLinks } from '../../config/socialLinks'
+import { footerNavigationData } from '../../config/footerNavigation'
+
+const { footerAbout, subFooter } = footerNavigationData
+---
+
+<footer class="footer">
+	<!-- Main footer -->
+	<div class="footer__main">
+		<div class="footer__container">
+			<div class="footer__content">
+				<div class="footer__about">
+					<div class="flex justify-center">
+						<a
+							aria-label="website logo"
+							aria-current="page"
+							class="footer__main-brand"
+							href="/"
+						>
+							<img
+								src={footerAbout.logo.src}
+								alt={footerAbout.logo.alt}
+								width="32"
+								height="32"
+							/>
+							{footerAbout.logo.text}
+						</a>
+					</div>
+					<p>
+						{footerAbout.aboutText}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Sub Footer -->
+	<div class="footer__sub">
+		<div class="footer__container">
+			<div class="footer__sub-cols">
+				<div class="footer__sub-col text-center md:text-left">
+					{subFooter.copywriteText}
+				</div>
+				<nav
+					aria-labelledby="footer-social-links-dark"
+					class="footer__sub-col text-center md:text-right"
+				>
+					<h2 class="sr-only" id="footer-social-links-dark">Social Media Links</h2>
+					<ul class="justify-center md:justify-end">
+						{
+							socialLinks.map((social) => (
+								<li>
+									<a
+										href={social.link}
+										aria-label={social.name}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Icon name={social.icon} />
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		@apply text-neutral-500 dark:text-neutral-300;
+	}
+	.footer a {
+		@apply transition-colors duration-300 hover:text-primary-500 focus:text-primary-600;
+	}
+	.footer__main {
+		@apply border-t border-neutral-100 bg-neutral-50 pb-8 pt-12 text-sm dark:border-neutral-900 dark:bg-neutral-950;
+	}
+	.footer__main-brand {
+		@apply mb-4 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
+	}
+	.footer__container {
+		@apply container mx-auto px-6;
+	}
+	.footer__content {
+		@apply flex justify-center;
+	}
+	.footer__about {
+		@apply max-w-xl text-center;
+	}
+	.footer__sub {
+		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm text-neutral-600 dark:border-neutral-900 dark:bg-neutral-800/50 dark:text-neutral-400;
+	}
+	.footer__sub ul {
+		@apply flex items-center gap-6;
+	}
+	.footer__sub a {
+		@apply [&_svg]:h-4 [&_svg]:w-4 [&_svg]:shrink-0;
+	}
+	.footer__sub-cols {
+		@apply grid grid-cols-1 items-center gap-4 md:grid-cols-2;
+	}
+	.footer__sub-col {
+		@apply md:col-span-1;
+	}
+</style>

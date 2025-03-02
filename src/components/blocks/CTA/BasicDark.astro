@@ -1,0 +1,52 @@
+---
+// Contact Call To Action section
+// ------------
+// Description: A centered call to action section that contains: a title, text, background image, and contact buttons.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import CTA from '../../ui/CTA.astro'
+import Button from '../../ui/Button.astro'
+import { Icon } from 'astro-icon/components'
+
+// Content
+import ctaImage from '../../../assets/cta-dark-bg.webp'
+---
+
+<Section id="contact">
+	<Row>
+		<Col span="1" />
+		<Col span="10">
+			<CTA
+				title="Let's Work Together!"
+				text="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of the channels below."
+				mode="light"
+				bg={ctaImage}
+			>
+				<div class="flex flex-col justify-center gap-4 sm:flex-row">
+					<Button size="lg" style="primary" link="mailto:pedrohlf.contato@gmail.com">
+						<Icon name="mail-icon" class="mr-2 h-5 w-5" />
+						Email Me
+					</Button>
+					<Button
+						size="lg"
+						style="secondary"
+						link="https://linkedin.com/in/pedrohlfrancisco"
+					>
+						<Icon name="linkedin-icon" class="mr-2 h-5 w-5" />
+						Connect on LinkedIn
+					</Button>
+					<Button size="lg" style="neutral" link="tel:+5519982226579">
+						<Icon name="phone-arrow-up-right" class="mr-2 h-5 w-5" />
+						Call Me
+					</Button>
+				</div>
+			</CTA>
+		</Col>
+		<Col span="1" />
+	</Row>
+</Section>
