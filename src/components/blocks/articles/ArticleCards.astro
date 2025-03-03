@@ -9,13 +9,9 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
-import Card from '../../ui/cards/FeatureCard.astro'
-
-// Content
-// - Cards
-import article01 from '../../../assets/cards/feature-01.svg'
-import article02 from '../../../assets/cards/feature-04.svg'
-import article03 from '../../../assets/cards/feature-05.svg'
+import { Icon } from 'astro-icon/components'
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
 
 // Articles data
 const articles = [
@@ -23,21 +19,24 @@ const articles = [
 		title: 'KISS, DRY, SOLID, YAGNI: A Simple Guide to Software Engineering Principles',
 		subtitle:
 			'A simple guide to some principles of software engineering and clean code that will help you write better code.',
-		image: article01,
+		icon: 'document-text',
+		iconColor: '#F0B165',
 		link: 'https://medium.com/@hlfdev/kiss-dry-solid-yagni-a-simple-guide-to-some-principles-of-software-engineering-and-clean-code-05e60233c79f'
 	},
 	{
 		title: 'Algorithms: Discover the Power of Big O Notation',
 		subtitle:
 			'Understanding Big O Notation and its importance in algorithm analysis and software development.',
-		image: article02,
+		icon: 'arrow-trending-up',
+		iconColor: '#3498DB',
 		link: 'https://medium.com/@hlfdev/algorithms-discover-the-power-of-big-o-notation-17a367bd62a'
 	},
 	{
 		title: 'Building a Design System with Atomic Design in Flutter',
 		subtitle:
 			'Learn how to implement Atomic Design principles to create a scalable and maintainable design system in Flutter applications.',
-		image: article03,
+		icon: 'rectangle-stack',
+		iconColor: '#2ECC71',
 		link: 'https://medium.com/@hlfdev/building-a-design-system-with-atomic-design-in-flutter-a7a16e28739b'
 	}
 ]
@@ -58,13 +57,32 @@ const articles = [
 			articles.map((article) => (
 				<Col span="4">
 					<Card
-						title={article.title}
-						subtitle={article.subtitle}
-						image={article.image}
 						link={article.link}
 						target="_blank"
 						rel="noopener noreferrer"
-					/>
+						classes="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-100 dark:border-neutral-800"
+					>
+						<div class="flex items-center justify-center p-6">
+							<div
+								class="flex h-16 w-16 items-center justify-center rounded-full"
+								style={`background-color: ${article.iconColor}20;`}
+							>
+								<Icon
+									name={article.icon}
+									class="h-8 w-8"
+									style={`color: ${article.iconColor};`}
+								/>
+							</div>
+						</div>
+						<CardBody classes="text-center">
+							<h3 class="mb-2 text-lg font-semibold">{article.title}</h3>
+							<p class="text-neutral-600 dark:text-neutral-400">{article.subtitle}</p>
+							<div class="mt-4 inline-flex items-center font-medium text-primary-500">
+								Read Article
+								<Icon name="long-arrow-right" class="ml-1 h-4 w-4" />
+							</div>
+						</CardBody>
+					</Card>
 				</Col>
 			))
 		}
