@@ -30,11 +30,12 @@ const { title, subtitle, image, link, target, rel } = Astro.props
 <Card
 	title={title}
 	subtitle={subtitle}
-	titleSize="xl"
+	titleSize="lg"
 	link={link}
 	target={target}
 	rel={rel}
 	image={image}
 	type="image-bottom"
-	classes="!bg-neutral-50 !shadow-none dark:!bg-neutral-900 h-full justify-between border border-neutral-100 dark:border-neutral-800"
+	classes="!bg-neutral-50 !shadow-none dark:!bg-neutral-900 h-full justify-between border border-neutral-100 dark:border-neutral-800 !p-0 text-center"
+	centerContent={true}
 />

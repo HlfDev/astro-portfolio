@@ -10,6 +10,9 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
 import Card from '../../ui/cards/FeatureCard.astro'
+import { Image } from 'astro:assets'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import CardPartial from '../../ui/cards/partials/Card.astro'
 
 // Content
 // - Cards
@@ -22,7 +25,7 @@ import feature05 from '../../../assets/cards/feature-05.svg'
 
 <Section id="skills" classes="bg-white">
 	<Row>
-		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+		<Col span="12" align="center" classes="mb-8 max-w-4xl mx-auto">
 			<h2 class="text-pretty">My <strong>Skills</strong> & Expertise</h2>
 			<p class="pb-0 text-lg">
 				I develop cross-platform applications with Flutter, leveraging Design Patterns, TDD,
@@ -34,14 +37,31 @@ import feature05 from '../../../assets/cards/feature-05.svg'
 	</Row>
 	<Row>
 		<Col span="4">
-			<Card
-				title="Flutter Development"
-				subtitle="Expert in building cross-platform mobile applications using Flutter and Dart. Proficient in creating beautiful, responsive UIs and implementing complex business logic."
-				image={feature01}
+			<!-- Custom Flutter Development Card with larger image -->
+			<CardPartial
 				link="/experience"
-			/>
+				classes="!bg-neutral-50 !shadow-none dark:!bg-neutral-900 h-full flex flex-col justify-between items-center text-center border border-neutral-100 dark:border-neutral-800 !p-0"
+			>
+				<div class="flex w-full items-center justify-center p-4">
+					<Image
+						src={feature01}
+						alt="Flutter Development"
+						class="max-h-48 object-contain"
+						width={500}
+						height={300}
+					/>
+				</div>
+				<CardBody classes="text-center w-full">
+					<h3 class="text-lg lg:text-lg">Flutter Development</h3>
+					<p>
+						Expert in building cross-platform mobile applications using Flutter and
+						Dart. Proficient in creating beautiful, responsive UIs and implementing
+						complex business logic.
+					</p>
+				</CardBody>
+			</CardPartial>
 		</Col>
-		<Col span="4" classes="flex flex-col gap-6">
+		<Col span="4" classes="flex flex-col gap-4">
 			<Card
 				title="Clean Architecture & SOLID"
 				subtitle="Strong focus on software architecture principles to create maintainable, testable, and scalable applications."
@@ -55,7 +75,7 @@ import feature05 from '../../../assets/cards/feature-05.svg'
 				link="/experience"
 			/>
 		</Col>
-		<Col span="4" classes="flex flex-col gap-6">
+		<Col span="4" classes="flex flex-col gap-4">
 			<Card
 				title="Firebase & Backend Integration"
 				subtitle="Skilled in integrating Firebase services and RESTful APIs to create full-featured mobile applications."
