@@ -1,0 +1,47 @@
+---
+// Experience Timeline Implementation
+// ------------
+// Description: Implementation of the timeline component for the Professional Experience section.
+
+// Components
+import ExperienceTimeline from '../timeline/ExperienceTimeline.astro'
+
+// Experience data
+const experienceItems = [
+	{
+		company: 'Dafiti',
+		position: 'Software Engineer - Senior',
+		period: '2024 – Current',
+		description:
+			'Part of the Growth Team, developing cross-platform mobile applications using Flutter. Focus on scalability, performance, and user experience. Collaborate with teams to deliver innovative solutions for fashion e-commerce.',
+		skills: ['Flutter', 'Dart', 'Mobile Development', 'UI/UX', 'E-commerce']
+	},
+	{
+		company: 'Raro Labs',
+		position: 'Flutter Mobile Developer - Mid-Level',
+		period: '2023 – 2024',
+		description:
+			'Worked with Bank BMG in the credit cards and loans team. Participated in migrating native Android/iOS applications to Flutter. Contributed to system optimization and scalability improvements.',
+		skills: ['Flutter', 'Dart', 'Banking', 'App Migration', 'Performance Optimization']
+	},
+	{
+		company: 'Dimensa Tecnologia',
+		position: 'Flutter Mobile Developer - Junior',
+		period: '2021 – 2023',
+		description:
+			'Developed high-performing mobile applications for Android and iOS using Flutter. Created fintech and digital banking solutions. Integrated APIs and backend services. Configured CI/CD pipelines and deployed apps to Play Store and Apple Store.',
+		skills: ['Flutter', 'Dart', 'Fintech', 'API Integration', 'CI/CD', 'App Store Deployment']
+	},
+	{
+		company: 'Inntegra Systems',
+		position: 'ERP Developer - Junior',
+		period: '2019 – 2021',
+		description:
+			'Developed ERP module features using Visual Basic 6. Created advanced reports with Crystal Reports 8. Developed SQL scripts for Business Intelligence using MySQL. Maintained integration applications using C# (Windows Forms).',
+		skills: ['Visual Basic 6', 'Crystal Reports', 'SQL', 'MySQL', 'C#', 'Windows Forms', 'ERP']
+	}
+]
+---
+
+<ExperienceTimeline items={experienceItems} />
+

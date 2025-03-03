@@ -1,0 +1,130 @@
+---
+// Experience Timeline Component
+// ------------
+// Description: A timeline component for displaying professional experience history.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import { Icon } from 'astro-icon/components'
+
+// Types
+type TimelineItem = {
+	company: string
+	position: string
+	period: string
+	description: string
+	skills?: string[]
+}
+
+// Props
+type Props = {
+	id?: string
+	items: TimelineItem[]
+	classes?: string
+}
+
+const { id = 'experience', items, classes = '' } = Astro.props
+---
+
+<Section id={id} classes={`experience-timeline ${classes}`}>
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Professional <strong>Experience</strong></h2>
+			<p class="pb-0 text-lg">
+				My career journey in software development, with a focus on mobile application
+				development using Flutter.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="10" classes="mx-auto">
+			<div class="timeline">
+				{
+					items.map((item, index) => (
+						<div class="timeline-item">
+							<div class="timeline-marker">
+								<div class="timeline-marker-dot" />
+								{index !== items.length - 1 && <div class="timeline-marker-line" />}
+							</div>
+							<div class="timeline-content">
+								<div class="timeline-header">
+									<h3 class="timeline-company">{item.company}</h3>
+									<span class="timeline-period">{item.period}</span>
+								</div>
+								<div class="timeline-position">
+									<strong>{item.position}</strong>
+								</div>
+								<p class="timeline-description">{item.description}</p>
+								{item.skills && item.skills.length > 0 && (
+									<div class="timeline-skills">
+										{item.skills.map((skill) => (
+											<span class="timeline-skill-tag">{skill}</span>
+										))}
+									</div>
+								)}
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	.timeline {
+		@apply relative py-4;
+	}
+
+	.timeline-item {
+		@apply flex gap-6 pb-10;
+	}
+
+	.timeline-marker {
+		@apply relative flex flex-col items-center;
+	}
+
+	.timeline-marker-dot {
+		@apply z-10 flex h-6 w-6 items-center justify-center rounded-full bg-primary-500;
+	}
+
+	.timeline-marker-line {
+		@apply mt-2 w-0.5 flex-grow bg-neutral-200 dark:bg-neutral-700;
+	}
+
+	.timeline-content {
+		@apply flex-1;
+	}
+
+	.timeline-header {
+		@apply mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between;
+	}
+
+	.timeline-company {
+		@apply text-xl font-bold text-neutral-900 dark:text-white;
+	}
+
+	.timeline-period {
+		@apply text-sm font-medium text-neutral-500 dark:text-neutral-400;
+	}
+
+	.timeline-position {
+		@apply mb-2 text-lg text-primary-600 dark:text-primary-400;
+	}
+
+	.timeline-description {
+		@apply mb-4 text-neutral-700 dark:text-neutral-300;
+	}
+
+	.timeline-skills {
+		@apply flex flex-wrap gap-2;
+	}
+
+	.timeline-skill-tag {
+		@apply rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300;
+	}
+</style>
