@@ -7,7 +7,7 @@ export interface Logo {
 	alt: string
 }
 
-export type Mode = 'auto' | 'light' | 'dark'
+export type Mode = 'light'
 
 export interface Config {
 	siteTitle: string
