@@ -24,7 +24,7 @@ export const configData: Config = {
 	siteTitle: 'Pedro Francisco | Software Engineer & Flutter Developer',
 	siteDescription:
 		'Pedro Francisco is a Software Engineer specializing in Flutter development with expertise in Design Patterns, TDD, SOLID principles, and Clean Architecture.',
-	ogImage: '/og.jpg',
+	ogImage: '/og.png',
 	logo: {
 		src: '/logo.svg',
 		alt: 'Pedro Francisco Portfolio'

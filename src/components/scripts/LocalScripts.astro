@@ -106,6 +106,18 @@
 
 <!-- Light mode only -->
 <script>
+	// Force light mode immediately
 	document.documentElement.classList.remove('dark')
 	document.documentElement.classList.add('light')
+
+	// Also ensure light mode on page load and navigation
+	document.addEventListener('DOMContentLoaded', () => {
+		document.documentElement.classList.remove('dark')
+		document.documentElement.classList.add('light')
+	})
+
+	document.addEventListener('astro:page-load', () => {
+		document.documentElement.classList.remove('dark')
+		document.documentElement.classList.add('light')
+	})
 </script>
