@@ -6,6 +6,7 @@ import Layout from '../layouts/Layout.astro'
 import Section from '../components/ui/Section.astro'
 import Row from '../components/ui/Row.astro'
 import Col from '../components/ui/Col.astro'
+import { Icon } from 'astro-icon/components'
 
 // Content
 // - SEO
@@ -17,57 +18,221 @@ const SEO = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Section classes="bg-white">
+	<!-- Header Section -->
+	<Section classes="bg-gradient-to-b from-neutral-50 to-white py-8">
 		<Row>
-			<Col span="2" />
-			<Col span="8">
-				<h1>About <strong>Me</strong></h1>
-				<p class="text-lg">
+			<Col spanMobile="1" span="2" />
+			<Col spanMobile="10" span="8" classes="text-center">
+				<h1 class="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+					About <strong class="text-primary-500">Me</strong>
+				</h1>
+				<div class="mx-auto mb-4 h-1 w-24 rounded-full bg-primary-500"></div>
+				<p class="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-600">
 					Technology enthusiast passionate about creating innovative and efficient
-					solutions.
+					solutions through modern mobile development practices.
 				</p>
-				<p>
-					I develop cross-platform applications with Flutter, leveraging Design Patterns,
-					TDD, SOLID principles, and Clean Architecture to ensure high-quality code. I am
-					also expanding my knowledge to native platforms, including Android (Kotlin) and
-					iOS (Swift).
-				</p>
-
-				<h2 class="mt-8">Education</h2>
-				<div class="mb-6">
-					<h3 class="text-xl font-semibold">
-						Lato Sensu Postgraduate - Specialization in Full Stack Development
-					</h3>
-					<p>Pontifícia Universidade Católica de Minas Gerais (2021 - 2025, Ongoing)</p>
-				</div>
-				<div class="mb-6">
-					<h3 class="text-xl font-semibold">Bachelor's Degree in Information Systems</h3>
-					<p>Universidade Paulista (2017 - 2020)</p>
-				</div>
-
-				<h2 class="mt-8">Languages</h2>
-				<ul class="list-disc pl-6">
-					<li>Portuguese (Native/Fluent)</li>
-					<li>English (Intermediate)</li>
-				</ul>
-
-				<h2 class="mt-8">Additional Information</h2>
-				<ul class="list-disc pl-6">
-					<li>
-						Passionate about continuous learning and innovation in mobile development.
-					</li>
-					<li>
-						Strong problem-solving skills and ability to work in fast-paced
-						environments.
-					</li>
-					<li>Committed to writing clean, maintainable, and scalable code.</li>
-					<li>
-						Open to collaboration and teamwork to achieve outstanding software
-						solutions.
-					</li>
-				</ul>
 			</Col>
-			<Col span="2" />
+			<Col spanMobile="1" span="2" />
+		</Row>
+	</Section>
+
+	<!-- Main Content Section -->
+	<Section classes="bg-white pt-4 pb-10">
+		<Row>
+			<Col spanMobile="1" span="2" />
+			<Col spanMobile="10" span="8">
+				<!-- Bio -->
+				<div class="mb-12 text-neutral-700">
+					<p class="mb-4 leading-relaxed">
+						I develop cross-platform applications with Flutter, leveraging Design
+						Patterns, TDD, SOLID principles, and Clean Architecture to ensure
+						high-quality code. I am also expanding my knowledge to native platforms,
+						including Android (Kotlin) and iOS (Swift).
+					</p>
+					<p class="leading-relaxed">
+						My goal is to build software that not only meets functional requirements but
+						also provides an exceptional user experience while maintaining clean,
+						maintainable code.
+					</p>
+				</div>
+
+				<!-- Education Timeline -->
+				<div class="mb-14">
+					<h2 class="mb-6 flex items-center text-2xl font-bold text-neutral-800">
+						<Icon name="document-text" class="mr-3 h-6 w-6 text-primary-500" />
+						Education
+					</h2>
+					<div class="education-timeline">
+						<div class="timeline-item">
+							<div class="timeline-marker">
+								<div class="timeline-marker-dot"></div>
+								<div class="timeline-marker-line"></div>
+							</div>
+							<div class="timeline-content">
+								<div class="timeline-header">
+									<h3 class="timeline-institution">
+										Pontifícia Universidade Católica de Minas Gerais
+									</h3>
+									<span class="timeline-period">2021 - 2025</span>
+								</div>
+								<div class="timeline-degree">
+									<strong
+										>Lato Sensu Postgraduate - Specialization in Full Stack
+										Development</strong
+									>
+								</div>
+								<p class="timeline-description">
+									Advancing my knowledge in full-stack development, covering both
+									frontend and backend technologies, with a focus on modern web
+									and mobile application development.
+								</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-marker">
+								<div class="timeline-marker-dot"></div>
+							</div>
+							<div class="timeline-content">
+								<div class="timeline-header">
+									<h3 class="timeline-institution">Universidade Paulista</h3>
+									<span class="timeline-period">2017 - 2020</span>
+								</div>
+								<div class="timeline-degree">
+									<strong>Bachelor's Degree in Information Systems</strong>
+								</div>
+								<p class="timeline-description">
+									Built a strong foundation in computer science, software
+									engineering principles, and information systems management,
+									preparing me for a career in software development.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Languages -->
+				<div class="mb-14">
+					<h2 class="mb-6 flex items-center text-2xl font-bold text-neutral-800">
+						<Icon name="chat-bubble-left-right" class="mr-3 h-6 w-6 text-primary-500" />
+						Languages
+					</h2>
+					<div class="flex flex-wrap gap-4">
+						<div
+							class="rounded-full border border-neutral-100 bg-neutral-50 px-6 py-3 shadow-sm transition-shadow hover:shadow"
+						>
+							<span class="font-medium text-neutral-800">Portuguese</span>
+							<span class="ml-2 text-neutral-500">(Native/Fluent)</span>
+						</div>
+						<div
+							class="rounded-full border border-neutral-100 bg-neutral-50 px-6 py-3 shadow-sm transition-shadow hover:shadow"
+						>
+							<span class="font-medium text-neutral-800">English</span>
+							<span class="ml-2 text-neutral-500">(Intermediate)</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Additional Information -->
+				<div>
+					<h2 class="mb-6 flex items-center text-2xl font-bold text-neutral-800">
+						<Icon name="light-bulb" class="mr-3 h-6 w-6 text-primary-500" />
+						Additional Information
+					</h2>
+					<ul class="space-y-4 rounded-lg border border-neutral-100 bg-neutral-50 p-6">
+						<li class="flex items-start">
+							<div
+								class="mr-3 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-100"
+							>
+								<Icon name="check-circle" class="h-4 w-4 text-primary-500" />
+							</div>
+							<span class="text-neutral-700"
+								>Passionate about continuous learning and innovation in mobile
+								development.</span
+							>
+						</li>
+						<li class="flex items-start">
+							<div
+								class="mr-3 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-100"
+							>
+								<Icon name="check-circle" class="h-4 w-4 text-primary-500" />
+							</div>
+							<span class="text-neutral-700"
+								>Strong problem-solving skills and ability to work in fast-paced
+								environments.</span
+							>
+						</li>
+						<li class="flex items-start">
+							<div
+								class="mr-3 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-100"
+							>
+								<Icon name="check-circle" class="h-4 w-4 text-primary-500" />
+							</div>
+							<span class="text-neutral-700"
+								>Committed to writing clean, maintainable, and scalable code.</span
+							>
+						</li>
+						<li class="flex items-start">
+							<div
+								class="mr-3 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary-100"
+							>
+								<Icon name="check-circle" class="h-4 w-4 text-primary-500" />
+							</div>
+							<span class="text-neutral-700"
+								>Open to collaboration and teamwork to achieve outstanding software
+								solutions.</span
+							>
+						</li>
+					</ul>
+				</div>
+			</Col>
+			<Col spanMobile="1" span="2" />
 		</Row>
 	</Section>
 </Layout>
+
+<style>
+	.education-timeline {
+		@apply relative py-2;
+	}
+
+	.timeline-item {
+		@apply flex gap-6 pb-8;
+	}
+
+	.timeline-marker {
+		@apply relative flex flex-col items-center;
+	}
+
+	.timeline-marker-dot {
+		@apply z-10 flex h-5 w-5 items-center justify-center rounded-full bg-primary-500;
+	}
+
+	.timeline-marker-line {
+		@apply mt-1 w-0.5 flex-grow bg-neutral-200;
+	}
+
+	.timeline-content {
+		@apply flex-1;
+	}
+
+	.timeline-header {
+		@apply mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between;
+	}
+
+	.timeline-institution {
+		@apply text-lg font-bold text-neutral-800;
+	}
+
+	.timeline-period {
+		@apply text-sm font-medium text-primary-600;
+	}
+
+	.timeline-degree {
+		@apply mb-2 text-neutral-700;
+	}
+
+	.timeline-description {
+		@apply text-neutral-600;
+	}
+</style>
