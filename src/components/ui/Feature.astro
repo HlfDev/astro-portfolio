@@ -36,7 +36,7 @@ const { type = 'top-icon', title, icon = 'rocket', iconStyle, align, classes } =
 	]}
 >
 	<Icon
-		name=`${icon}`
+		name={icon}
 		class:list={[
 			'shrink-0',
 			{ [`size-6 text-primary-500`]: iconStyle != 'square' },

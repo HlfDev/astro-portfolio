@@ -10,7 +10,9 @@ export default defineConfig({
   site: "https://foxi.netlify.app/",
   integrations: [
     tailwind(),
-    icon(),
+    icon({
+      iconDir: 'src/assets/icons'
+    }),
     sitemap(),
     partytown({
       config: {
