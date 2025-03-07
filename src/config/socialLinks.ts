@@ -21,7 +21,7 @@ export const socialLinks: SocialLink[] = [
 	},
 	{
 		name: 'email',
-		link: 'mailto:pedrohlf.contato@gmail.com',
+		link: 'mailto:contact@hlfdev.com',
 		icon: 'mail-icon'
 	}
 ]

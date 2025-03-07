@@ -68,4 +68,4 @@ This project is open source and available under the MIT License.
 
 ## 📬 Contact
 
-Feel free to reach out to me at pedrohlf.contato@gmail.com or connect with me on LinkedIn.
+Feel free to reach out to me at contact@hlfdev.com or connect with me on LinkedIn.
