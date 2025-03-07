@@ -37,6 +37,11 @@ const { title, description, ogImage, noindex } = Astro.props
 			{ ['scroll-animation']: configData.scrollAnimations }
 		]}
 	>
+		<script>
+			// Ensure light mode is used regardless of device preference
+			document.documentElement.classList.remove('dark')
+			document.documentElement.classList.add('light')
+		</script>
 		<NavigationBar />
 		<Main>
 			<slot />
