@@ -45,13 +45,5 @@ export const navigationBarData: NavData = {
 		{ name: 'About', link: '/about' },
 		{ name: 'Contact', link: '/contact' }
 	],
-	navActions: [{
-		name: 'Download CV',
-		link: 'https://drive.google.com/file/d/19CnK73_GvGpbWHV2oclYgSC_o7fnZE6r/view',
-		style: 'primary',
-		size: 'lg',
-		icon: 'document-text',
-		target: '_blank',
-		rel: 'noopener noreferrer'
-	}]
+	navActions: []
 }

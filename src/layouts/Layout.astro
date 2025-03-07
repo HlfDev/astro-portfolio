@@ -14,6 +14,8 @@ import '@fontsource-variable/inter'
 import '@fontsource-variable/outfit'
 // Data
 import { configData } from '../config/config'
+// Icons
+import { Icon } from 'astro-icon/components'
 
 // Props
 type Props = {
@@ -42,5 +44,71 @@ const { title, description, ogImage, noindex } = Astro.props
 		<Footer />
 		<Modal />
 		<Scripts />
+
+		<!-- Back to top button -->
+		<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+			<Icon name="arrow-up" class="h-6 w-6" />
+		</button>
+		<style>
+			.back-to-top {
+				@apply fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg transition-all duration-300 hover:bg-primary-600 focus:outline-none;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(20px);
+			}
+			.back-to-top.visible {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		</style>
+
+		<script>
+			// Function to initialize the back-to-top button
+			function initBackToTopButton() {
+				const backToTopButton = document.getElementById('back-to-top')
+
+				if (backToTopButton) {
+					// Check scroll position immediately on page load
+					if (window.scrollY > 300) {
+						backToTopButton.classList.add('visible')
+					} else {
+						backToTopButton.classList.remove('visible')
+					}
+
+					// Show button when scrolled down
+					window.addEventListener('scroll', () => {
+						if (window.scrollY > 300) {
+							backToTopButton.classList.add('visible')
+						} else {
+							backToTopButton.classList.remove('visible')
+						}
+					})
+
+					// Scroll back to top when clicked
+					backToTopButton.addEventListener('click', () => {
+						// Get all sections
+						const sections = document.querySelectorAll('section')
+
+						// If there are sections and we're not already at the top
+						if (sections.length > 0 && window.scrollY > 0) {
+							// Scroll to the first section (hero section)
+							sections[0].scrollIntoView({ behavior: 'smooth' })
+						}
+					})
+				}
+			}
+
+			// Run on initial page load
+			document.addEventListener('DOMContentLoaded', initBackToTopButton)
+
+			// Also run when the document is loaded and when navigating between pages
+			document.addEventListener('astro:page-load', initBackToTopButton)
+
+			// Cleanup event listeners when navigating away
+			document.addEventListener('astro:before-swap', () => {
+				window.removeEventListener('scroll', () => {})
+			})
+		</script>
 	</body>
 </html>
